@@ -1,6 +1,6 @@
-import leia from "readline-sync";
 import { colors } from "./src/util/Colors";
 import { Conta } from "./src/model/Conta"
+import { Input } from "./src/util/Input";
 
 export function main() {
 
@@ -50,7 +50,8 @@ export function main() {
         console.log("*********************************************")
         console.log(colors.reset)
 
-        opcao = leia.questionInt("Digite a opcao desejada: ")
+        console.log("Digite a opção desejada: ");
+        opcao = Input.questionInt("");
 
         if (opcao === 9) {
             console.log(colors.fg.red)
@@ -63,37 +64,47 @@ export function main() {
         switch (opcao) {
             case 1:
                 console.log("Criar Conta (W.I.P)")
+                
+                KeyPress()
                 break
             case 2:
                 console.log("Listar Contas (W.I.P)")
 
+                KeyPress()
                 break
             case 3:
                 console.log("Buscar conta pelo Número (W.I.P)")
 
+                KeyPress()
                 break
             case 4:
                 console.log("Atualizar dados da conta (W.I.P)")
 
+                KeyPress()
                 break
             case 5:
                 console.log("Apagar Conta(W.I.P)")
 
+                KeyPress()
                 break
             case 6:
                 console.log("Sacar (W.I.P)")
 
+                KeyPress()
                 break
             case 7:
                 console.log("Depositar (W.I.P)")
 
+                KeyPress()
                 break
             case 8:
                 console.log("Transferência entre contas (W.I.P)")
 
+                KeyPress()
                 break
             default:
                 console.log("Opção indisponível")
+                KeyPress()
         }
     }
 }
@@ -108,6 +119,11 @@ function sobre(): void {
     console.log("                                         ")
     console.log("---------------------------------------------------")
     console.log(colors.reset)
+}
+
+function KeyPress(): void{
+    console.log("\nPressione Enter para continuar...")
+    Input.prompt()
 }
 
 main()
