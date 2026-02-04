@@ -1,9 +1,33 @@
 import leia from "readline-sync";
 import { colors } from "./src/util/Colors";
+import { Conta } from "./src/model/Conta"
 
 export function main() {
 
     let opcao: number
+
+    // Instancoar Objetos da Classe Conta
+
+    const c1 = new Conta(1, 123, "Julio", 1, 100000.00)
+
+    c1.visualizar();
+
+    //Testes do Método Sacar
+    console.log("Sacar 100.00: ", c1.sacar(100));
+    console.log("Sacar 80000000.00: ", c1.sacar(80000000));
+    console.log("Sacar 0.00: ", c1.sacar(0));
+
+    // Testes do Método Depositar
+    console.log("Depositar 0.00: ")
+    c1.depositar(0)
+
+    console.log("Depositar 100.00: ")
+    c1.depositar(500)
+
+    c1.visualizar();
+
+
+
 
     while (true) {
         console.log(colors.fg.yellow)
