@@ -1,6 +1,6 @@
 import { colors } from "../util/Colors"
 
-export class Conta {
+export abstract class Conta {
 
   // Atributos da Classe
   private _numero: number;
@@ -109,8 +109,7 @@ export class Conta {
     console.log(`Número da Agência: ${this._agencia}       `);
     console.log(`Número do Titular: ${this._titular}       `);
     console.log(`Típo da Conta: ${tipo}              `);
-    console.log(`Saldo da Conta: R$ ${this._saldo.toFixed(2)}            `);
-    console.log("******************************************");
+    console.log(`Saldo da Conta: R$ ${this._saldo.toFixed(2)}`);
 
   }
 }

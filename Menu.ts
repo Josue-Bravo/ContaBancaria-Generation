@@ -1,32 +1,26 @@
 import { colors } from "./src/util/Colors";
-import { Conta } from "./src/model/Conta"
 import { Input } from "./src/util/Input";
+import { ContaCorrente } from "./src/model/ContaCorrente";
+import { ContaPoupanca } from "./src/model/ContaPoupanca";
 
 export function main() {
 
     let opcao: number
 
-    // Instancoar Objetos da Classe Conta
+    const cc1 = new ContaCorrente(2,5678,"Bianca",1,200000,2000)
 
-    const c1 = new Conta(1, 123, "Julio", 1, 100000.00)
+    cc1.agencia = 1234
+    
+    cc1.visualizar();
 
-    c1.visualizar();
+    console.log(cc1.sacar(1000))
+    console.log(cc1.sacar(200000))
 
-    //Testes do Método Sacar
-    console.log("Sacar 100.00: ", c1.sacar(100));
-    console.log("Sacar 80000000.00: ", c1.sacar(80000000));
-    console.log("Sacar 0.00: ", c1.sacar(0));
+    cc1.visualizar()
 
-    // Testes do Método Depositar
-    console.log("Depositar 0.00: ")
-    c1.depositar(0)
+    const cp1 = new ContaPoupanca(2,4541,"Hugo",2,10000,23)
 
-    console.log("Depositar 100.00: ")
-    c1.depositar(500)
-
-    c1.visualizar();
-
-
+    cp1.visualizar()
 
 
     while (true) {
